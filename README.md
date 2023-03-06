@@ -1,5 +1,3 @@
-## Простейшие алгоритмы детектирования объектов на изображении
-
 ## ITMO Computer Vision Course 2022
 
 ---
@@ -49,7 +47,7 @@
 
 Упрощенно суть метода Template Matching можно представить таким алгоритмом:
 
-1.  На входе имеем два изображения - одно большего размера(оригинал), другое меньшего(шаблон или темплат). 
+1. На входе имеем два изображения - одно большего размера(оригинал), другое меньшего(шаблон или темплат). 
 
 2. "Перемещаем" шаблон по изображению(слева направо, сверху вниз, построчно) и применяем некоторое математическое преобразование над элементами массивов, представляющих изображения. Получается некое подобие 2D-свертки. В результате получаем новую матрицу. 
 
@@ -136,5 +134,3 @@ temp_v1.jpg и т.д. - различные изображения искомог
 6. [Real Life Object Detection using OpenCV – Detecting objects in Live Video using SIFT and ORB](https://circuitdigest.com/tutorial/real-life-object-detection-using-opencv-python-detecting-objects-in-live-video)
 
 7. [GitHub - ojimpo/python-template-matching: template matching without using OpenCV](https://github.com/ojimpo/python-template-matching)
-
-
