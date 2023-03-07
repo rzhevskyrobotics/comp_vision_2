@@ -79,6 +79,9 @@ def template_matching_ocv(src, temp):
 
 #Вариант реализации feature-matching ORB
 def feature_matching_orb(src, temp):
+
+    # Получаем параметры картинок
+    h, w = temp.shape
     
     #Переводим в ЧБ
     gray = cv2.cvtColor(src, cv2.COLOR_RGB2GRAY)
@@ -124,16 +127,27 @@ def feature_matching_orb(src, temp):
 if __name__ == "__main__":
     # Загружаем картинки
     img = cv2.imread('example.jpg')
-    temp = cv2.imread('temp_original.jpg')
+    temp = cv2.imread('temp_v2.jpg')
 
     # Переводим в чб
     gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     temp = cv2.cvtColor(temp, cv2.COLOR_RGB2GRAY)
 
+    #Скалим для одного и того же размера
+    # let's downscale the image using new  width and height
+    down_width = 133
+    down_height = 167
+    down_points = (down_width, down_height)
+    resized_temp = cv2.resize(temp, down_points, interpolation= cv2.INTER_LINEAR)
+
     # Получаем параметры картинок
-    h, w = temp.shape
+    #h, w = resized_temp.shape
+
+    #print(h)
+    #print(w)
+
 
     # Рассчитываем координаты объекта(с контролем времени)
     # start_time = time.time()
 
-    template_matching_ocv(img, temp)
+    feature_matching_orb(img, resized_temp)
